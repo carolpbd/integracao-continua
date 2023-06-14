@@ -16,17 +16,7 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-          
-    test:
-      needs: compile
-      runs-on: ubuntu-latest
-      steps:
-      - uses:  tests/checkout@v3
       - name: Maven Compile/Test
-      - uses: tests/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
         working-directory: sgcmapi/
         run: mvn compile
   test:
